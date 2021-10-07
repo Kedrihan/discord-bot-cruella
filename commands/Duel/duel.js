@@ -60,7 +60,7 @@ module.exports = {
         phrase = phrase.replace("{X}", message.author.toString());
         phrase = phrase.replace("{Y}", target);
         return message.channel.send(new MessageEmbed()
-          .setColor(ee.color)
+          .setColor(ee.wincolor)
           .setFooter(ee.footertext, ee.footericon)
           .setTitle(`:white_check_mark: VICTOIRE`)
           .setDescription(phrase)
