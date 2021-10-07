@@ -18,11 +18,23 @@ client.commands = new Discord.Collection(); //an collection (like a digital map(
 client.aliases = new Discord.Collection(); //an collection for all your command-aliases
 client.categories = fs.readdirSync("./commands/"); //categories
 client.cooldowns = new Discord.Collection(); //an collection for cooldown commands of each user
+client.hangman = {
+  isLaunched: false,
+  erreurs: 0,
+  tirets: [],
+  essais: 0,
+  arrayMotAFaireDeviner: [],
+  lettreDemandee: '',
+  messageTabFaireDeviner: '',
+  alphabet: [],
+  motAFaireDeviner: "",
+  embedMessage: null
+};
 
 //Loading files, with the client variable like Command Handler, Event Handler, ...
 ["command", "events"].forEach(handler => {
-    require(`./handlers/${handler}`)(client);
+  require(`./handlers/${handler}`)(client);
 });
 //login into the bot
 client.login(process.env.CRUCRUBOT_TOKEN);
-//client.login()
+
