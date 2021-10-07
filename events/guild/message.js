@@ -18,13 +18,20 @@ module.exports = async (client, message) => {
     //if the message is on partial fetch it
     if (message.partial) await message.fetch();
 
+    //emote-only
+    if (message.channel.id === "600374244899291166") {
+      const text = message.content.replace(/:[^:\s]+:|<:[^:\s]+:[0-9]+>|<a:[^:\s]+:[0-9]+>/g, '').replace(/\s+/g, '');
+      if (text) {
+        return message.delete();
+      }
+    }
     //tag du bot
     if (message.content.includes(client.user.id)) {
       return message.channel.send(new MessageEmbed()
         .setColor(ee.wrongcolor)
         .setFooter(ee.footertext, ee.footericon)
         .setTitle(`❌ ERREUR`)
-        .setDescription("Arrête de me tag stp !")
+        .setDescription("Arrête de me tag stp " + client.emojis.cache.find(emoji => emoji.name === "FeelsBaguetteMan").toString())
       );
     }
 
