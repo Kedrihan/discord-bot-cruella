@@ -27,7 +27,7 @@ module.exports = async (client, message) => {
     }
     //tag du bot
     if (message.content.includes(client.user.id)) {
-      return message.channel.send(new MessageEmbed()
+      return message.channel.send(new Discord.MessageEmbed()
         .setColor(ee.wrongcolor)
         .setFooter(ee.footertext, ee.footericon)
         .setTitle(`❌ ERREUR`)
