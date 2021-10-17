@@ -13,14 +13,14 @@ module.exports = client => {
   }catch{ /* */ }
 
   try{
-    client.user.setActivity(client.user.username, { type: "PLAYING" });
+    client.user.setActivity('Cruella\'s Twitch & Discord', { type: "WATCHING" });
   }catch (e) {
       console.log(String(e.stack).red);
   }
   //Change status each 10 minutes
   setInterval(()=>{
     try{
-      client.user.setActivity(client.user.username, { type: "PLAYING" });
+      client.user.setActivity('Cruella\'s Twitch & Discord', { type: "WATCHING" });
     }catch (e) {
         console.log(String(e.stack).red);
     }
