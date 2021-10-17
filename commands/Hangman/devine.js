@@ -8,7 +8,7 @@ module.exports = {
   allowedChannels: ["552475150826602506"],
   usage: "devine <LETTRE>, devine <MOT>",
   description: "Tentative pour deviner une lettre ou un mot au pendu",
-  run: async (client, message, args, user, text, prefix) => {
+  run: async (client, twitch, pubsub, message, args, user, text, prefix) => {
     try {
       if (!client.hangman.isLaunched) {
         return message.channel.send(new MessageEmbed()

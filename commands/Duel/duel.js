@@ -9,7 +9,7 @@ module.exports = {
   allowedChannels: ["591275428354719764"],
   usage: "duel <TARGET>",
   description: "Provoque en duel TARGET",
-  run: async (client, message, args, user, text, prefix) => {
+  run: async (client, twitch, pubsub, message, args, user, text, prefix) => {
     const winPhrases = [
       "{X} a pulvérisé {Y} avec son attaque spéciale pikpik. C’est super efficace !",
       "{X} a fait voir flou à {Y}",

@@ -8,7 +8,7 @@ module.exports = {
   allowedChannels: ["all"],
   usage: "commu",
   description: "Retourne une phrase sympatoche",
-  run: async (client, message, args, user, text, prefix) => {
+  run: async (client, twitch, pubsub, message, args, user, text, prefix) => {
     try {
       return message.channel.send(new MessageEmbed()
       .setColor(ee.color)

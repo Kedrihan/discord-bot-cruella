@@ -2,6 +2,8 @@ const randomWordFR = require('random-word-fr');
 const { MessageEmbed } = require("discord.js");
 const config = require("../botconfig/config.json");
 const ee = require("../botconfig/embed.json");
+const axios = require("axios");
+
 module.exports = {
   //get a member lol
   getMember: function (message, toFind = "") {
@@ -210,5 +212,9 @@ module.exports = {
           value: hangmanParams.alphabet.length > 0 ? hangmanParams.alphabet.toString().toUpperCase() : "//",
           inline: true
         });
+  },
+  getTwitchOauthToken: async function (clientId, botSecret) {
+    let result = await axios.post('https://id.twitch.tv/oauth2/token?client_id=' + clientId + '&client_secret=' + botSecret + '&grant_type=client_credentials')
+    return result.data.access_token;
   }
 }

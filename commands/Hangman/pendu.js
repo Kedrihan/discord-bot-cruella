@@ -9,7 +9,7 @@ module.exports = {
   allowedChannels: ["552475150826602506"],
   usage: "pendu",
   description: "Lance une partie de pendu",
-  run: async (client, message, args, user, text, prefix) => {
+  run: async (client, twitch, pubsub, message, args, user, text, prefix) => {
     try {
       if (!client.hangman.isLaunched) {
         let msg = await message.channel.send(new MessageEmbed()

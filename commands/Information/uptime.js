@@ -9,7 +9,7 @@ module.exports = {
     allowedChannels: ["810798779321679913", "629284733653745664", "895396809252425769"],
     usage: "uptime",
     description: "Returns the duration on how long the Bot is online",
-    run: async (client, message, args, user, text, prefix) => {
+    run: async (client, twitch, pubsub, message, args, user, text, prefix) => {
     try{
       message.channel.send(new MessageEmbed()
         .setColor(ee.color)
