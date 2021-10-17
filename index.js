@@ -62,7 +62,7 @@ client.hangman = {
 
 //Loading files, with the client variable like Command Handler, Event Handler, ...
 ["command", "events"].forEach(handler => {
-  require(`./handlers/${handler}`)(client);
+  require(`./handlers/${handler}`)(client, twitch, pubsub);
 });
 //login into the bot
 client.login(process.env.CRUCRUBOT_TOKEN);
