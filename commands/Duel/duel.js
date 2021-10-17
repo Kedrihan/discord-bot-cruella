@@ -29,7 +29,7 @@ module.exports = {
       "{X} a collé une branlée mémorable à {Y} ! Je n'aimerai pas être à sa place."
     ]
     try {
-      if (!message.content.split(" ")[1] || !message.content.split(" ")[1].match(/[\\<>@!\d]/g)) {
+      if (!args[0] || !args[0].match(/[\\<>@!\d]/g)) {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
@@ -45,7 +45,7 @@ module.exports = {
           .setDescription("Ne cherche pas à me défier, je te défonce dans tous les cas (et arrête de me tag stp " + client.emojis.cache.find(emoji => emoji.name === "FeelsBaguetteMan").toString() + ")")
         );
       }
-      let target = message.content.split(" ")[1]
+      let target = args[0]
       if (target.replace(/[\\<>@!]/g, "") === message.author.id) {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
