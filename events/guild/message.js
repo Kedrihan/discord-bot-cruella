@@ -7,7 +7,7 @@ const ee = require("../../botconfig/embed.json"); //Loading all embed settings l
 const Discord = require("discord.js"); //this is the official discord.js wrapper for the Discord Api, which we use!
 const { escapeRegex, createBar } = require("../../handlers/functions"); //Loading all needed functions
 //here the event starts
-module.exports = async (client, message) => {
+module.exports = async (client, twitch, pubsub, message) => {
   try {
     //if the message is not in a guild (aka in dms), return aka ignore the inputs
     if (!message.guild) return;
@@ -86,7 +86,7 @@ module.exports = async (client, message) => {
             .setTitle(`❌ ERREUR | Vous ne pouvez pas utiliser cette commande dans ce canal.`)
           ).then(msg => msg.delete({ timeout: 8000 }).catch(e => console.log("Couldn't Delete --> Ignore".gray)));
         }
-        command.run(client, message, args, message.member, args.join(" "), prefix);
+        command.run(client, twitch, pubsub, message, args, message.member, args.join(" "), prefix);
       } catch (e) {
         console.log(String(e.stack).red)
         return message.channel.send(new Discord.MessageEmbed()
