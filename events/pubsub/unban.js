@@ -14,7 +14,7 @@ module.exports = async (client, twitch, pubsub, data) => {
       .setColor(ee.color)
       .setFooter(ee.footertext, ee.footericon)
       .setTitle(`:angel: UNBAN :angel:`)
-      .setDescription("```"+data.target.name + " a été unban par " + data.moderator.name + "\n https://www.twitch.tv/popout/cruelladk/viewercard/" + data.target.name+"```")
+      .setDescription("```"+data.target.name + " a été unban par " + data.moderator.name + "```\n[Cliquez ici pour voir le profil](https://www.twitch.tv/popout/cruelladk/viewercard/" + data.target.name + ")")
     );
   } catch (e) {
     return logsModerationTwitchDiscordChannel.send(

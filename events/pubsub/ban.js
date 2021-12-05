@@ -13,7 +13,7 @@ module.exports = async (client, twitch, pubsub, data) => {
       .setColor(ee.wrongcolor)
       .setFooter(ee.footertext, ee.footericon)
       .setTitle(`:no_entry: BAN :no_entry:`)
-      .setDescription("```"+data.target.name + " a été ban par " + data.moderator.name + "`\n https://www.twitch.tv/popout/cruelladk/viewercard/" + data.target.name+"```")
+      .setDescription("```" + data.target.name + " a été ban par " + data.moderator.name + "```\n[Cliquez ici pour voir le profil](https://www.twitch.tv/popout/cruelladk/viewercard/" + data.target.name + ")")
     );
 
   } catch (e) {

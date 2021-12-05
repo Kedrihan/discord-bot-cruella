@@ -13,7 +13,7 @@ module.exports = async (client, twitch, pubsub, data) => {
       .setColor(ee.wrongcolor)
       .setFooter(ee.footertext, ee.footericon)
       .setTitle(`:no_entry_sign: DELETE :no_entry_sign:`)
-      .setDescription("```Message de " + data.target.name + " delete par " + data.moderator.name + "\n Message : " + data.message.content + " \n https://www.twitch.tv/popout/cruelladk/viewercard/" + data.target.name+"```")
+      .setDescription("```Message de " + data.target.name + " delete par " + data.moderator.name + "\nMessage : " + data.message.content + "```\n[Cliquez ici pour voir le profil](https://www.twitch.tv/popout/cruelladk/viewercard/" + data.target.name + ")")
     );
 
   } catch (e) {
