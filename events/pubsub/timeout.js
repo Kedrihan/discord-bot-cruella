@@ -15,7 +15,7 @@ module.exports = async (client, twitch, pubsub, data) => {
       .setColor(ee.wrongcolor)
       .setFooter(ee.footertext, ee.footericon)
       .setTitle(`:x: TIMEOUT :x:`)
-      .setDescription(data.target.name + " a été timeout par " + data.moderator.name + " pendant " + data.duration + " " + s + "\n https://www.twitch.tv/popout/cruelladk/viewercard/" + data.target.name)
+      .setDescription("```"+data.target.name + " a été timeout par " + data.moderator.name + " pendant " + data.duration + " " + s + "\n https://www.twitch.tv/popout/cruelladk/viewercard/" + data.target.name+"```")
     );
   } catch (e) {
     return message.channel.send(
