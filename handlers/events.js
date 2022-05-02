@@ -1,7 +1,4 @@
 const fs = require("fs");
-const ascii = require("ascii-table");
-let table = new ascii("Events");
-table.setHeading("Events", "Load status");
 const allevents = [];
 module.exports = async (client, twitch, pubsub) => {
   try {
@@ -26,12 +23,11 @@ module.exports = async (client, twitch, pubsub) => {
     await ["client", "guild", "twitch", "pubsub"].forEach(e => load_dir(e, client, twitch, pubsub));
     for (let i = 0; i < allevents.length; i++) {
       try {
-        table.addRow(allevents[i], "Ready");
+        console.log(allevents[i] + " -> Ready");
       } catch (e) {
         console.log(String(e.stack).red);
       }
     }
-    console.log(table.toString().cyan);
     try {
       const stringlength = 69;
       console.log("\n")
